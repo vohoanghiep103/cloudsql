@@ -11,7 +11,7 @@
 		c = DriverManager.getConnection("jdbc:google:rdbms://cloudsqlnew:cloudsql/guestbook");
 		ResultSet rs = c.createStatement().executeQuery("SELECT guestName, content, entryID FROM entries");
 	%>
-
+	<h3 style="text-align: right; padding-right: 20px;"><a href="http://cnapagoda.blogspot.com">Visit Chandana's Blog</a></h3>
 	<p>
 		<strong>Sign the guestbook!</strong>
 	</p>
