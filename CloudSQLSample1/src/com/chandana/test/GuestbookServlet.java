@@ -11,6 +11,11 @@ import javax.servlet.http.*;
 
 import com.google.appengine.api.rdbms.AppEngineDriver;
 
+/**
+ * 
+ * @author Chandana Napagoda
+ *
+ */
 
 @SuppressWarnings("serial")
 public class GuestbookServlet extends HttpServlet {
