@@ -4,6 +4,9 @@
 <%@ page import="com.google.appengine.api.rdbms.AppEngineDriver"%>
 
 <html>
+<head>
+	 <meta name="description" content="Google App Engine Hosted Google Cloud SQL Application with Like Search." />
+</head>
 <body>
 	<h2>Google App Engine with Cloud SQL</h2>
 	<%
