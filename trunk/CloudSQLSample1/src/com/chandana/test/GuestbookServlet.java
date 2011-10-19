@@ -47,9 +47,9 @@ public class GuestbookServlet extends HttpServlet {
 				int success = 2;
 				success = stmt.executeUpdate();
 				if (success == 1) {
-					out.println("<html><head></head><body>Success! Redirecting in 3 seconds...</body></html>");
+					out.println("<html><head></head><body>Success! Redirecting in 2 seconds...</body></html>");
 				} else if (success == 0) {
-					out.println("<html><head></head><body>Failure! Please try again! Redirecting in 3 seconds...</body></html>");
+					out.println("<html><head></head><body>Failure! Please try again! Redirecting in 2 seconds...</body></html>");
 				}
 			}
 		} catch (SQLException e) {
