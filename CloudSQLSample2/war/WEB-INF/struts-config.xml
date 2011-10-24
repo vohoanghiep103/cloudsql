@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<form-beans>
+		<form-bean name="customerForm" type="com.chandana.dev.form.CustomerForm" />
+		<form-bean name="searchForm" type="com.chandana.dev.form.CustomerForm" />
+		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="customerList" type="java.util.List" />
+		</form-bean>
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/addCustomerPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/customer/add_customer.jsp" />
+		<action path="/addCustomer" type="com.chandana.dev.action.AddCustomerAction"
+			name="customerForm" validate="true" input="/customer/add_customer.jsp">
+			<forward name="success" redirect="true" path="/listCustomer.do" />
+		</action>
+		<action path="/customerPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/customer/search_customer.jsp" />
+		<action path="/searchCustomer" type="com.chandana.dev.action.SearchCustomerAction"
+			name="dynaCustomerListForm" validate="false"
+			input="/customer/search_customer.jsp">
+			<forward name="success" path="/customer/list_customer.jsp" />
+		</action>
+		<action path="/listCustomer" type="com.chandana.dev.action.ListCustomerAction"
+			name="dynaCustomerListForm">
+			<forward name="success" path="/customer/list_customer.jsp" />
+		</action>
+
+
+	</action-mappings>
+
+	<message-resources parameter="Customer" />
+
+	<!-- Spring Struts plugin -->
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation" value="/WEB-INF/classes/SpringBeans.xml" />
+	</plug-in>
+
+</struts-config>
