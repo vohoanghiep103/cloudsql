@@ -1,1 +1,1 @@
-Registry
+Hello <strong>Word</strong>
